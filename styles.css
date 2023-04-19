@@ -1,0 +1,208 @@
+/* Color Variables */
+:root {
+  --background-color: hsl(185, 41%, 84%);
+  --primary-color: hsl(183, 100%, 15%);
+  --accent-color: hsl(172, 67%, 45%);
+  --error-color: hsl(4, 90%, 58%);
+  --white-color: hsl(0, 0%, 100%);
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 1rem;
+}
+
+/* Calculator */
+.calculator {
+  background-color: hsl(189, 41%, 97%);
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  color: var(--primary-color);
+}
+
+/* Calculator Section */
+.calculator-section {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input Section */
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-section input {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 24px;
+  background-color: var(--background-color);
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  color: var(--primary-color);
+  width: 100%;
+}
+
+/* Tip Buttons */
+.tip-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.tip-buttons button {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 24px;
+  background-color: var(--primary-color);
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+.tip-buttons button:hover {
+  color: var(--primary-color);
+  background-color: var(--background-color);
+}
+
+.input-active {
+  border: 2px solid var(--accent-color);
+}
+
+.input-section input:focus {
+  box-shadow: 0 0 0 2px var(--accent-color);
+  outline: none;
+}
+
+.button-active {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+.tip-buttons button.active {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+.invalid-input {
+  box-shadow: 0 0 0 2px var(--error-color);
+}
+
+.input-wrapper {
+  position: relative;
+  min-height: 120px;
+}
+
+.error-message {
+  font-size: 0.75rem;
+  color: var(--error-color);
+  margin-top: 5px;
+}
+
+/* Output Section */
+.output-section {
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  color: var(--white-color);
+  width: 100%;
+}
+
+.output-section > div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  min-width: 300px;
+  flex-shrink: 0;
+}
+
+.output-section p {
+  font-size: 48px;
+  color: var(--accent-color);
+  justify-content: space-between;
+}
+
+.per-person {
+  display: block;
+  color: var(--background-color);
+  font-size: 0.75rem;
+}
+
+/* Reset Button */
+#reset {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  background-color: var(--accent-color);
+  align-self: flex-end;
+  padding: 1rem 2rem; 
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  width: 100%; 
+  text-transform: uppercase;
+}
+
+#reset:hover {
+  color: var(--primary-color);
+  background-color: var(--background-color);
+}
+
+/* Apply styles for wider than taller viewport (landscape) */
+@media screen and (min-aspect-ratio: 1/1) {
+  .calculator {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}
+
+/* Apply styles for taller than wider viewport (portrait) */
+@media screen and (max-aspect-ratio: 1/1) {
+  .calculator {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Attribution */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
